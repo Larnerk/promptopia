@@ -1,3 +1,9 @@
+## This Next.js app showcases use of CRUD operations within a full stack Next.js web application.
+
+### Technologies utilized include mongoDB, Next.js, React, and Google Auth
+
+Based on the project by JavaScript Mastery, found here: (https://www.youtube.com/watch?v=wm5gMKuwSYk&list=PL6QREj8te1P7gixBDSU8JLvQndTEEX3c3)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
