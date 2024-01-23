@@ -1,22 +1,23 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 
-
-import Form from "@components/Form";
+import Form from '@components/Form';
 
 const UpdatePromptForm = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const promptId = searchParams.get("id");
+  const promptId = searchParams.get('id');
 
-  const [post, setPost] = useState({ prompt: "", tag: "", });
+  const [post, setPost] = useState({ prompt: '', tag: '' });
   const [submitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const getPromptDetails = async () => {
-      if (!promptId) return;
+      if (!promptId) {
+        return;
+      }
 
       try {
         const response = await fetch(`/api/prompt/${promptId}`);
@@ -38,11 +39,13 @@ const UpdatePromptForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    if (!promptId) return alert("Missing PromptId!");
+    if (!promptId) {
+      return alert('Missing PromptId!');
+    }
 
     try {
       const response = await fetch(`/api/prompt/${promptId}`, {
-        method: "PATCH",
+        method: 'PATCH',
         body: JSON.stringify({
           prompt: post.prompt,
           tag: post.tag,
@@ -50,7 +53,7 @@ const UpdatePromptForm = () => {
       });
 
       if (response.ok) {
-        router.push("/");
+        router.push('/');
       }
     } catch (error) {
       console.log('Error updating prompt', error);
@@ -59,17 +62,7 @@ const UpdatePromptForm = () => {
     }
   };
 
-  return (
- 
-      <Form
-      type='Edit'
-      post={post}
-      setPost={setPost}
-      submitting={submitting}
-      handleSubmit={updatePrompt}
-    />
-
-  );
+  return <Form type='Edit' post={post} setPost={setPost} submitting={submitting} handleSubmit={updatePrompt} />;
 };
 
 export default UpdatePromptForm;
