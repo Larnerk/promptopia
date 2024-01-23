@@ -6,7 +6,9 @@ import { useState, useEffect } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const Nav = () => {
-    const { data: session } = useSession();
+    console.log(useSession());
+    const { data: session, status  } = useSession();
+    const isLoading = status==="loading";
 
     const [providers, setProviders] = useState(null);
 
@@ -42,7 +44,7 @@ const Nav = () => {
             <div className="sm:flex hidden">
                 {/* Display specific navigation depending on login state of user, authenticated via Google Auth and isUserLoggedIn variable(boolean) */}
 
-                {session?.user ? (
+                {!isLoading && (session?.user ? (
                     <div className="flex gap-3 md:gap-5">
 
                         <Link href="/create-prompt" className="black_btn">Create Post</Link>
@@ -68,7 +70,7 @@ const Nav = () => {
                                 </button>
                             ))}
                         </>
-                    )}
+                    ))}
 
             </div>
 
