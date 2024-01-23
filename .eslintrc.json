@@ -67,6 +67,8 @@
     "curly": ["warn", "all"], // Require consistent brace style for all control statements.
     "eqeqeq": ["warn", "always"], // Enforce the use of === and !== over == and !=.
     "eslint-comments/no-unused-disable": "warn", // Disallow unused eslint-disable comments.
+    "jsx-a11y/no-noninteractive-element-interactions": "warn", // Enforce that non-interactive, visible elements (such as <div>) that have click handlers use the role attribute.
+    "jsx-a11y/click-events-have-key-events": "warn", // Enforce that non-interactive, visible elements (such as <div>) that have click handlers use the role attribute.
     "import/newline-after-import": "warn", // Enforce a newline after import statements.
     "import/no-absolute-path": "warn", // Disallow import statements with absolute paths.
     "import/no-dynamic-require": "warn", // Disallow require() calls with expressions.
