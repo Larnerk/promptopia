@@ -143,7 +143,7 @@
     "react/prefer-stateless-function": "warn", // Enforce stateless React Components to be written as pure functions.
     "react/prop-types": "off", // Turn off prop-types rule, as TypeScript's types are used instead.
     "react/self-closing-comp": "warn", // Enforce component closing tag style.
-    "react/react-in-jsx-scope": "warn", // Prevent missing React when using JSX.
+    "react/react-in-jsx-scope": "off", // Prevent missing React when using JSX.
     "security/detect-buffer-noassert": "warn", // Warn on use of the buffer constructor without a noassert flag.
     "security/detect-child-process": "warn", // Warn on use of child processes.
     "security/detect-disable-mustache-escape": "warn", // Warn on disabling mustache escaping.
