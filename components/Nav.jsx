@@ -35,7 +35,7 @@ const Nav = () => {
                     alt="Promptopia Logo"
                     width={30} height={30}
                     className="object-contain" />
-                <p className="logo_text">Promptopia</p>
+                <p className="logo_text">{process.env.NEXT_PUBLIC_APP_NAME}</p>
             </Link>
 
 
